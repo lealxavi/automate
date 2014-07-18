@@ -10,8 +10,6 @@ function Automate () {
 	this.selectAllAndNext = function() {
 		var nextButton = document.querySelector(this.elements.next); 
 		var selectAll  = document.querySelector(this.elements.all);
-		console.log(nextButton);
-		console.log(selectAll);
 		this.fireEvent(selectAll,"click");
 		this.fireEvent(nextButton,"click");
 
