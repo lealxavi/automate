@@ -1,15 +1,17 @@
 function Automate () {
 
 	this.elements = {
-		next : document.querySelector("blabla"),
-		all  : document.querySelector("blabla"),
+		next : "blabla",
+		all  : "blabla",
 	}
 	
 	this.timeOutId = null;
 
 	this.selectAllAndNext = function() {
-		var nextButton = this.elements.next; 
-		var selectAll  = this.elements.all;
+		var nextButton = document.querySelector(this.elements.next); 
+		var selectAll  = document.querySelector(this.elements.all);
+		console.log(nextButton);
+		console.log(selectAll);
 		this.fireEvent(selectAll,"click");
 		this.fireEvent(nextButton,"click");
 
