@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snippet</title>
+  <style>
+    textarea {
+      margin: 0 auto;
+      width: 900px;
+      height: 300px;
+      display: block;
+    }
+
+    button {
+      margin: 10px auto;
+      display: block;
+    }
+  </style>
+  <script>
+
+    var collection = {};
+
+    function countElements () {
+      
+      var lines = document.querySelector("textarea").value.split("\n"); 
+        
+      collection[1] = new Array();
+      collection[2] = new Array();
+      collection[3] = new Array();
+      collection[4] = new Array();
+
+      for (var i = 0 ; i < lines.length; ++i) {
+        if(lines[i][0] === "#") {
+          var num = numberOfHashes(lines[i]);
+          collection[num].push(lines[i]);
+        }
+      }
+    }
+
+    function numberOfHashes(string) {
+      return string.split("#").length - 1;
+    }
+
+  </script>
+</head>
+<body>
+  <textarea></textarea>
+  <button onClick="countElements()">Run it!</button>
+</body>
+</html>
